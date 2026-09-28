@@ -1,0 +1,13 @@
+python-dotenv
+google-genai
+tenacity
+sentence-transformers
+faiss-cpu
+pandas
+openpyxl
+python-docx
+rank_bm25
+numpy
+streamlit
+fastapi
+uvicorn[standard]

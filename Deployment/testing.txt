@@ -1,0 +1,8 @@
+1. Retrieval
+
+ID	App	Exact input	Required retrieved evidence
+R1	450T	What are the default semantic scoring weights?	Technical_Document_450T_AI.docx, section 9.1 Semantic Scoring Components; description 0.60, GLN 0.20, brand 0.15, pack size 0.05
+R2	450T	What error appears when a file contains multiple supplier numbers?	450T_User_Guide.xlsx, section Quick Manual; “File Contains Multiple Supplier Numbers”
+R3	450T	Does the application load values from the .env file itself?	Technical document, section 11.1 Configuration Source; process environment variables are authoritative and the app does not load .env itself
+R4	MIT	What four kinds of reports are available?	MIT_Help_Document.docx, section Introduction; all four report names
+R5	MIT	Where are Jetro files uploaded?	MIT document containing the S3 QA/jetroinbound/ location
