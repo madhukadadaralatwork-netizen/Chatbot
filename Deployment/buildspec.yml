@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+      - AWS_REGION=ap-south-1
+      - ECR_REPOSITORY=chatbot-api
+      - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URI
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building Docker image...
+      - docker build -t $ECR_REPOSITORY:latest Deployment
+      - docker tag $ECR_REPOSITORY:latest $ECR_URI:latest
+
+  post_build:
+    commands:
+      - echo Pushing Docker image to Amazon ECR...
+      - docker push $ECR_URI:latest
+      - echo Docker image pushed successfully.
+      - printf '[{"name":"chatbot-api","imageUri":"%s"}]' $ECR_URI:latest > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
