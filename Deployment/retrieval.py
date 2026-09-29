@@ -40,7 +40,7 @@ from dataclasses import dataclass
 import numpy as np
 from rank_bm25 import BM25Okapi
 
-from Chatbot.Deployment.query_expansion import multi_query_search
+from query_expansion import multi_query_search
 
 DIAGNOSTIC_TERMS = (
     "why", "fail", "failing", "failed", "error", "invalid", "issue", "problem",

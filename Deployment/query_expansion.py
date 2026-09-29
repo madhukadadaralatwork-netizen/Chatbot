@@ -26,7 +26,7 @@ be made conditional (e.g. only expand when the first-pass retrieval score
 is low) rather than running on every question.
 """
 
-from Chatbot.Deployment.chunking_main import _generate_content_with_retry
+from chunking_main import _generate_content_with_retry
 
 DEFAULT_NUM_VARIANTS = 2
 

@@ -23,7 +23,7 @@ extra.
 
 import re
 
-from Chatbot.Deployment.chunking_main import _generate_content_with_retry
+from chunking_main import _generate_content_with_retry
 
 ANAPHORA_TERMS = {
     "this", "that", "it", "these", "those", "issue", "problem", "error",

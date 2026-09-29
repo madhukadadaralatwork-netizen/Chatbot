@@ -6,8 +6,8 @@ API setup), but builds context/prompt generically via prompt.py instead of
 chunking_main's 450T-specific build_prompt.
 """
 
-from Chatbot.Deployment.chunking_main import _generate_content_with_retry, NOT_FOUND_MESSAGE
-from Chatbot.Deployment.prompt import build_prompt, NOT_FOUND_TOKEN
+from chunking_main import _generate_content_with_retry, NOT_FOUND_MESSAGE
+from prompt import build_prompt, NOT_FOUND_TOKEN
 
 
 def build_context(results):

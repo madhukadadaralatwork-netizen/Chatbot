@@ -19,13 +19,13 @@ Flow:
 from sentence_transformers import SentenceTransformer
 import faiss
 
-from Chatbot.Deployment.chunking_main import MODEL_NAME, NOT_FOUND_MESSAGE
-from Chatbot.Deployment.loader import load_documents_blocks
-from Chatbot.Deployment.retrieval import chunk_blocks, build_hybrid_index, retrieve_for_question
-from Chatbot.Deployment.generate import generate_answer_from_context
-from Chatbot.Deployment.answer_helpers import answer_meta_question
-from Chatbot.Deployment.conversation import condense_query
-from Chatbot.Deployment.app_config import APP_DOCUMENTS
+from chunking_main import MODEL_NAME, NOT_FOUND_MESSAGE
+from loader import load_documents_blocks
+from retrieval import chunk_blocks, build_hybrid_index, retrieve_for_question
+from generate import generate_answer_from_context
+from answer_helpers import answer_meta_question
+from conversation import condense_query
+from app_config import APP_DOCUMENTS
 
 
 def build_combined_index(model):
